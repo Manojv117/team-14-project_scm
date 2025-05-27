@@ -16,4 +16,9 @@
 
 </head>
 
-
+cart.forEach(item => {
+      const listItem = document.createElement("li");
+      listItem.innerHTML = ${item.name} x${item.quantity} - ₹${item.price * item.quantity};
+      cartSummary.appendChild(listItem);
+  
+      total += item.price * item.quantity; 
