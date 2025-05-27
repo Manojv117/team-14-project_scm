@@ -16,4 +16,23 @@
 
 </head>
 
+itemDiv.innerHTML = `
+          <span>${item.name}</span>
+          <span>₹${item.price} × ${item.quantity}</span>
+        `;
 
+        cartItemsContainer.appendChild(itemDiv);
+        total += item.price * item.quantity;
+      
+      }
+      );
+
+      totalAmountSpan.textContent = total;
+    }
+
+
+    function toggleAddressField() {
+      const selectedType = [...orderTypeRadios].find(r => r.checked).value;
+      if (selectedType === "delivery") {
+        addressGroup.style.display = "block";
+        document.getElementById("address").setAttribute("required", "true");
