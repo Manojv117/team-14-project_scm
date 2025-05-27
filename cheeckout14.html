@@ -17,3 +17,22 @@
 </head>
 
 
+ <!-- JavaScript for checkout behavior -->
+   
+  <script>
+
+    // Load cart items from localStorage
+    const cartItemsContainer = document.getElementById("cartItemsContainer");
+    const totalAmountSpan = document.getElementById("totalAmount");
+    const orderTypeRadios = document.getElementsByName("orderType");
+    const addressGroup = document.getElementById("addressGroup");
+    const phoneInput = document.getElementById("phone");
+
+    function updateCartDisplay() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cartItemsContainer.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("cart-item");
