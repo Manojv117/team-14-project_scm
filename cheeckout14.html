@@ -22,6 +22,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  HEAD
 A simple and functional online food ordering platform that allows users to sign up, log in, browse a menu, add items to a cart, and place orders. Built entirely using HTML, CSS, and JavaScript with localStorage to simulate backend behavior.
  end
@@ -247,3 +248,16 @@ HEAD
     const orderType = document.querySelector('input[name="orderType"]:checked')?.value;
   
 Hilton
+
+
+ if (!name || !email || !phone || !address || !orderType) {
+      alert("Please fill in all fields and select an order type.");
+      return;
+    }
+  
+    // Fake order submission (clear cart and redirect)
+    localStorage.removeItem("cart");
+    window.location.href = "order-success.html";
+  }
+
+    Asteroid
