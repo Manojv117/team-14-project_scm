@@ -16,4 +16,23 @@
 
 </head>
 
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartSummary = document.getElementById("cartSummary");
+    const totalAmount = document.getElementById("totalAmount");
+    let total = 0;
 
+    cartSummary.innerHTML = "";
+    // Clear previous cart summary
+
+    // If cart is empty, show message
+    if (cart.length === 0) {
+      const emptyMessage = document.createElement("li");
+      emptyMessage.innerText = "Your cart is empty.";
+      cartSummary.appendChild(emptyMessage);
+      totalAmount.innerText = "₹0";
+      return;
+
+    }
+
+
+// Iterate over cart items
