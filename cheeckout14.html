@@ -20,6 +20,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  HEAD
 A simple and functional online food ordering platform that allows users to sign up, log in, browse a menu, add items to a cart, and place orders. Built entirely using HTML, CSS, and JavaScript with localStorage to simulate backend behavior.
  end
@@ -194,3 +195,25 @@ if (localStorage.getItem("isLoggedIn") !== "true") {
   // Load cart and display order summary
   function loadCartSummary() {
 >>>>>>> Portofino
+=======
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartSummary = document.getElementById("cartSummary");
+    const totalAmount = document.getElementById("totalAmount");
+    let total = 0;
+
+    cartSummary.innerHTML = "";
+    // Clear previous cart summary
+
+    // If cart is empty, show message
+    if (cart.length === 0) {
+      const emptyMessage = document.createElement("li");
+      emptyMessage.innerText = "Your cart is empty.";
+      cartSummary.appendChild(emptyMessage);
+      totalAmount.innerText = "₹0";
+      return;
+
+    }
+
+
+// Iterate over cart items
+>>>>>>> Mulberry
