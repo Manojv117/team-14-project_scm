@@ -145,6 +145,26 @@ itemDiv.innerHTML = `
       totalAmountSpan.textContent = total;
     }
 
+} 
+      else
+      {
+        addressGroup.style.display = "none";
+        document.getElementById("address").removeAttribute("required");
+      }
+
+    }
+
+    orderTypeRadios.forEach(radio => {
+      radio.addEventListener("change", toggleAddressField);
+    }
+    );
+
+    document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+// Simulate order placed
+      window.location.href = "order-success.html";
+    }
+    );
 
     function toggleAddressField() {
       const selectedType = [...orderTypeRadios].find(r => r.checked).value;
