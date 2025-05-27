@@ -19,6 +19,10 @@
 <body>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
  HEAD
 A simple and functional online food ordering platform that allows users to sign up, log in, browse a menu, add items to a cart, and place orders. Built entirely using HTML, CSS, and JavaScript with localStorage to simulate backend behavior.
  end
@@ -129,8 +133,8 @@ four
       cart.forEach((item) => {
         const itemDiv = document.createElement("div");
         itemDiv.classList.add("cart-item");
->>>>>>> Radissonblue
-=======
+ Radissonblue
+
 itemDiv.innerHTML = `
           <span>${item.name}</span>
           <span>₹${item.price} × ${item.quantity}</span>
@@ -145,10 +149,139 @@ itemDiv.innerHTML = `
       totalAmountSpan.textContent = total;
     }
 
+} 
+      else
+      {        addressGroup.style.display = "none";
+        document.getElementById("address").removeAttribute("required");
+      }
+
+    }
+
+    orderTypeRadios.forEach(radio => {
+      radio.addEventListener("change", toggleAddressField);
+    }
+    );
+
+    document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+// Simulate order placed
+      window.location.href = "order-success.html";
+    }
+    );
 
     function toggleAddressField() {
       const selectedType = [...orderTypeRadios].find(r => r.checked).value;
       if (selectedType === "delivery") {
         addressGroup.style.display = "block";
         document.getElementById("address").setAttribute("required", "true");
->>>>>>> Empire
+ Empire
+
+   // Init
+    updateCartDisplay();
+    toggleAddressField();
+
+  </script>
+ 
+  <script>
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// ... rest of the JS code
+
+    // Redirect if not logged in
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+
+  // Load cart and display order summary
+  function loadCartSummary() {
+ Portofino
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartSummary = document.getElementById("cartSummary");
+    const totalAmount = document.getElementById("totalAmount");
+    let total = 0;
+
+    cartSummary.innerHTML = "";
+    // Clear previous cart summary
+
+    // If cart is empty, show message
+    if (cart.length === 0) {
+      const emptyMessage = document.createElement("li");
+      emptyMessage.innerText = "Your cart is empty.";
+      cartSummary.appendChild(emptyMessage);
+      totalAmount.innerText = "₹0";
+      return;
+
+    }
+
+ HEAD
+
+// Iterate over cart items
+ Mulberry
+
+cart.forEach(item => {
+      const listItem = document.createElement("li");
+      listItem.innerHTML = ${item.name} x${item.quantity} - ₹${item.price * item.quantity};
+      cartSummary.appendChild(listItem);
+  
+      total += item.price * item.quantity; 
+ Rockies
+   // Calculate total
+    });
+  
+    totalAmount.innerText = ₹${total}; 
+    // Display total amount
+  }
+  
+  loadCartSummary(); 
+
+HEAD
+
+    // Load and display cart when page loads
+ Barbados
+ // Checkout button functionality
+  function submitOrder() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
+    const orderType = document.querySelector('input[name="orderType"]:checked')?.value;
+  
+Hilton
+
+ // Show specific form based on order type
+  function showOrderTypeForm(type) {
+    const forms = document.querySelectorAll(".order-type-form");
+    forms.forEach(form => form.style.display = "none");
+  
+    const selectedForm = document.getElementById(type);
+    if (selectedForm) {
+      selectedForm.style.display = "block";
+    }
+
+ HEAD
+ if (!name || !email || !phone || !address || !orderType) {
+      alert("Please fill in all fields and select an order type.");
+      return;
+    }
+  
+    // Fake order submission (clear cart and redirect)
+    localStorage.removeItem("cart");
+    window.location.href = "order-success.html";
+  }
+
+    Asteroid
+
+</script>
+</body>
+
+<<<<<<< HEAD
+  }
+
+    Camlin
+=======
+</html>
+
+
+       
+>>>>>>> end
