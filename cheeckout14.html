@@ -16,4 +16,12 @@
 
 </head>
 
-
+ if (!name || !email || !phone || !address || !orderType) {
+      alert("Please fill in all fields and select an order type.");
+      return;
+    }
+  
+    // Fake order submission (clear cart and redirect)
+    localStorage.removeItem("cart");
+    window.location.href = "order-success.html";
+  }
