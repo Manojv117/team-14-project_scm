@@ -32,6 +32,7 @@ A simple and functional online food ordering platform that allows users to sign 
         </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div class="form-group" id="addressGroup" style="display: none">
           <label for="address">Delivery Address</label>
           <textarea id="address" name="address" placeholder="Street, City, ZIP code"></textarea>
@@ -108,3 +109,23 @@ four
 
   </footer>
  Taj
+ <!-- JavaScript for checkout behavior -->
+   
+  <script>
+
+    // Load cart items from localStorage
+    const cartItemsContainer = document.getElementById("cartItemsContainer");
+    const totalAmountSpan = document.getElementById("totalAmount");
+    const orderTypeRadios = document.getElementsByName("orderType");
+    const addressGroup = document.getElementById("addressGroup");
+    const phoneInput = document.getElementById("phone");
+
+    function updateCartDisplay() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cartItemsContainer.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("cart-item");
+>>>>>>> Radissonblue
