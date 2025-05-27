@@ -16,4 +16,14 @@
 
 </head>
 
+ // Show specific form based on order type
+  function showOrderTypeForm(type) {
+    const forms = document.querySelectorAll(".order-type-form");
+    forms.forEach(form => form.style.display = "none");
+  
+    const selectedForm = document.getElementById(type);
+    if (selectedForm) {
+      selectedForm.style.display = "block";
+    }
 
+  }
