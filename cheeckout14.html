@@ -21,6 +21,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  HEAD
 A simple and functional online food ordering platform that allows users to sign up, log in, browse a menu, add items to a cart, and place orders. Built entirely using HTML, CSS, and JavaScript with localStorage to simulate backend behavior.
  end
@@ -149,8 +150,7 @@ itemDiv.innerHTML = `
 
 } 
       else
-      {
-        addressGroup.style.display = "none";
+      {        addressGroup.style.display = "none";
         document.getElementById("address").removeAttribute("required");
       }
 
@@ -174,7 +174,7 @@ itemDiv.innerHTML = `
         addressGroup.style.display = "block";
         document.getElementById("address").setAttribute("required", "true");
  Empire
-=======
+
    // Init
     updateCartDisplay();
     toggleAddressField();
@@ -194,8 +194,7 @@ if (localStorage.getItem("isLoggedIn") !== "true") {
 
   // Load cart and display order summary
   function loadCartSummary() {
->>>>>>> Portofino
-=======
+ Portofino
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartSummary = document.getElementById("cartSummary");
     const totalAmount = document.getElementById("totalAmount");
@@ -214,15 +213,27 @@ const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     }
 
-<<<<<<< HEAD
+ HEAD
 
 // Iterate over cart items
->>>>>>> Mulberry
-=======
+ Mulberry
+
 cart.forEach(item => {
       const listItem = document.createElement("li");
       listItem.innerHTML = ${item.name} x${item.quantity} - ₹${item.price * item.quantity};
       cartSummary.appendChild(listItem);
   
       total += item.price * item.quantity; 
->>>>>>> Rockies
+ Rockies
+   // Calculate total
+    });
+  
+    totalAmount.innerText = ₹${total}; 
+    // Display total amount
+  }
+  
+  loadCartSummary(); 
+
+
+    // Load and display cart when page loads
+ Barbados
