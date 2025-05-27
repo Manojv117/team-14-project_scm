@@ -19,6 +19,7 @@
 <body>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
  HEAD
 A simple and functional online food ordering platform that allows users to sign up, log in, browse a menu, add items to a cart, and place orders. Built entirely using HTML, CSS, and JavaScript with localStorage to simulate backend behavior.
  end
@@ -172,3 +173,24 @@ itemDiv.innerHTML = `
         addressGroup.style.display = "block";
         document.getElementById("address").setAttribute("required", "true");
  Empire
+=======
+   // Init
+    updateCartDisplay();
+    toggleAddressField();
+
+  </script>
+ 
+  <script>
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// ... rest of the JS code
+
+    // Redirect if not logged in
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+
+  // Load cart and display order summary
+  function loadCartSummary() {
+>>>>>>> Portofino
