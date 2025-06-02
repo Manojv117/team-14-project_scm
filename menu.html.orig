@@ -13,8 +13,9 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
-
-
+<<<<<<< HEAD
+</style>
+=======
 
     body {
       background-color: #fffaf0;
@@ -75,30 +76,8 @@
     .item-card button:hover {
       background-color: #e60000;
     }
-    /* Notification bar styling */
-    .notification-bar {
-      display: none;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #4CAF50;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      z-index: 1000;
-    }
-
-    .notification-bar.show {
-      display: block;
-      animation: slideDown 0.5s forwards;
-    }
-
-    @keyframes slideDown {
-      from { top: -50px; }
-      to { top: 0; }
-    }
   </style>
-
+>>>>>>> lest
   <script>
 
     // Redirect if not logged in
