@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Auth - ByteBites</title>
+  <link rel="stylesheet" href="css/styles.css">
+  </head>
+
+ <body>
+
+  <!-- Login Form -->
+  <div class="container" id="loginContainer">
+
+    <h2>Login to ByteBites</h2>
+
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="footer-link">
+      Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a>
+    </div>
+
+    <div class="info">
+      <p>For demonstration purposes, any non-empty credentials will be accepted.</p>
+    </div>
+
+</div>
+
+  <!-- Signup Form -->
+  <div class="container" id="signupContainer" style="display: none;">
+
+    <h2>Create Your Account</h2>
+
+    <form id="signupForm">
+      <input type="text" id="newUsername" placeholder="Username" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="newPassword" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <div class="footer-link">
+      Already have an account? <a href="#" onclick="toggleForms()">Login</a>
+    </div>
+
+    <div class="info">
+      <p>Ensure all fields are filled to successfully sign up.</p>
+    </div>
+
+</div>
+ </body>
+</html>
+
