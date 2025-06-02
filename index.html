@@ -16,6 +16,160 @@
       <a href="signup.html">Sign Up</a>
       <a href="menu.html">Menu</a>
     </nav>
+    <style>
+
+/* Basic styling for quick preview */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff5e6;
+      color: #333;
+    }
+
+    /* Header styling */
+    header {
+      background-color: #ff4d4d;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Navigation styling */
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Hero section styling */
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: url('images/hero-banner.jpg') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    /* Call to action button styling */
+    .cta {
+      margin-top: 20px;
+    }
+
+    .cta a button {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .cta a button:hover {
+      background-color: #e60000;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    /* Additional styling for demonstration */
+    .features {
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .features h2 {
+      margin-bottom: 20px;
+    }
+
+    .features p {
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      padding: 40px 20px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 20px;
+    }
+
+    .contact form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact button {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .contact button:hover {
+      background-color: #e60000;
+    }
+
+    /* Notification bar styling */
+    .notification-bar {
+      display: none;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      z-index: 1000;
+    }
+
+    .notification-bar.show {
+      display: block;
+      animation: slideDown 0.5s forwards;
+    }
+
+    @keyframes slideDown {
+      from { top: -50px; }
+      to { top: 0; }
+    }
+
+</style>
+
   </header>
 
   <div id="notificationBar" class="notification-bar"></div>
