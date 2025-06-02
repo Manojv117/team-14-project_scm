@@ -132,6 +132,41 @@
   </main>
 
   <script>
+
+document.getElementById("userGreeting").innerText = localStorage.getItem("username") || "Guest";
+
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("username");
+      localStorage.removeItem("cart");
+      window.location.href = "login.html";
+    }
+
+    // Sample food data
+    const foodItems = [
+      { id: 1, name: "Cheese Pizza", price: 199, image: "assets/images/pizza.jpg" },
+      { id: 2, name: "Veg Burger", price: 129, image: "assets/images/burger.jpg" },
+      { id: 3, name: "Fries", price: 89, image: "assets/images/fries.jpg" },
+      { id: 4, name: "Coke", price: 49, image: "assets/images/coke.jpg" },
+      { id: 5, name: "Pasta", price: 159, image: "assets/images/pasta.jpg" }
+    ];
+
+    const menuList = document.getElementById("menuList");
+
+    foodItems.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "item-card";
+      card.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <h3>${item.name}</h3>
+        <p>₹${item.price}</p>
+        <button onclick="addToCart(${item.id})">Add to Cart</button>
+      `;
+      menuList.appendChild(card);
+    }
+    );
+
+
   </script>
 
 </body>
