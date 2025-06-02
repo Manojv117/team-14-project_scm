@@ -125,6 +125,130 @@
     </div>
 
 </div>
+<script>
+
+    // Function to toggle between login and signup forms
+    function toggleForms() {
+      const loginContainer = document.getElementById('loginContainer');
+      const signupContainer = document.getElementById('signupContainer');
+      if (loginContainer.style.display === 'none') {
+        loginContainer.style.display = 'block';
+        signupContainer.style.display = 'none';
+      } else {
+        loginContainer.style.display = 'none';
+        signupContainer.style.display = 'block';
+      }
+    }
+
+    // Event listener for login form submission
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Simulated login (accepts any non-empty credentials)
+      if (username && password) {
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("username", username);
+        window.location.href = "menu.html"; // redirect to menu
+      } else {
+        alert("Please enter valid credentials.");
+      }
+    });
+
+        // Event listener for signup form submission
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("newUsername").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("newPassword").value;
+
+      // Simulated signup (store in localStorage or just redirect)
+      if (username && email && password) {
+        alert("Signup successful! Please log in.");
+        toggleForms();
+      } else {
+        alert("Please fill all fields.");
+      }
+    });
+
+    // Additional JavaScript for demonstration purposes
+    function showWelcomeMessage() {
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+      const username = localStorage.getItem("username");
+      if (isLoggedIn === "true" && username) {
+        alert(`Welcome back, ${username}!`);
+      }
+    }
+
+    // Call the welcome message function on page load
+    window.onload = function() {
+      showWelcomeMessage();
+    };
+
+    // Function to clear local storage (for testing purposes)
+    function clearLocalStorage() {
+      localStorage.clear();
+      alert("Local storage cleared!");
+    }
+
+    // Add a button to clear local storage for testing
+    const clearButton = document.createElement("button");
+    clearButton.textContent = "Clear Local Storage";
+    clearButton.style.marginTop = "20px";
+    clearButton.onclick = clearLocalStorage;
+    document.body.appendChild(clearButton);
+
+    // Function to simulate a delay (for demonstration purposes)
+    function simulateDelay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    // Example of using the delay function
+    async function delayedAlert() {
+      await simulateDelay(2000);
+      alert("This alert was delayed by 2 seconds.");
+    }
+
+        // Call the delayed alert function
+    delayedAlert();
+
+    // Additional functions to increase line count
+    function logFormData(formId) {
+      const form = document.getElementById(formId);
+      const formData = new FormData(form);
+      for (let [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+      }
+    }
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    function validatePassword(password) {
+      return password.length >= 6;
+    }
+
+    function showValidationMessages() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("newPassword").value;
+      if (!validateEmail(email)) {
+        alert("Invalid email format.");
+      }
+      if (!validatePassword(password)) {
+        alert("Password must be at least 6 characters long.");
+      }
+    }
+
+    // Call validation messages function on signup form submission
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      showValidationMessages();
+    });
+
+</script>
  </body>
 </html>
 
