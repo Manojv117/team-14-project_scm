@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <title>
+    Menu - ByteBites
+  </title>
+  
+  <link rel="stylesheet" href="css/styles.css">
+<script>
+
+    // Redirect if not logged in
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+
+  </script>
+
+
+ </head>
+
+<body>
+
+  <header>
+
+    <h2>ByteBites - Menu</h2>
+
+    <div>
+      <span>Welcome, <strong id="userGreeting"></strong></span>
+      <button onclick="logout()" style="margin-left: 20px; padding: 5px 10px;">Logout</button>
+      <a href="cart.html" style="margin-left: 15px; color: white;">🛒 Cart</a>
+    </div>
+
+</header>
+
+  <div id="notificationBar" class="notification-bar"></div>
+
+  <main class="menu-container" id="menuList">
+
+    <!-- Food items will be added dynamically -->
+ 
+  </main>
+</body>
+</html>
+
