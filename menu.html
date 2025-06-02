@@ -213,7 +213,38 @@ function addToCart(id) {
       showNotification("This notification was delayed by 2 seconds.");
     }
 
+    // Call the delayed notification function
+    delayedNotification();
+
+    // Function to display a welcome message
+    function displayWelcomeMessage() {
+      showNotification("Welcome to ByteBites Menu!");
+    }
+
+    // Call the welcome message function on page load
+    window.onload = function() {
+      displayWelcomeMessage();
+    };
+
+    // Function to clear the cart
+    function clearCart() {
+      localStorage.removeItem("cart");
+      showNotification("Cart has been cleared!");
+    }
+
+    // Function to update cart count
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+      document.querySelector('a[href="cart.html"]').textContent = `🛒 Cart (${cartCount})`;
+    }
+
+    // Update cart count on page load
+    updateCartCount();
+
   </script>
+
+  <div id="menuList" class="menu-items"></div>
 
 </body>
 </html>
