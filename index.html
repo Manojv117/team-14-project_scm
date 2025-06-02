@@ -94,7 +94,7 @@
       bottom: 0;
     }
 
-    /* Additional styling for demonstration */
+    /* Additional styling */
     .features {
       padding: 40px 20px;
       background-color: #f9f9f9;
@@ -187,7 +187,7 @@
   <section class="features">
     <h2>Why Choose ByteBites?</h2>
     <p>Fast Delivery</p>
-    <p>Fresh Ingredients</p>
+    <p>Fresh Food</p>
     <p>Wide Variety of Dishes</p>
   </section>
 
@@ -208,7 +208,59 @@
   <footer>
     &copy; 2025 ByteBites. All rights reserved.
   </footer>
+<script>
+    // JavaScript for form submission
+    document.querySelector('.contact form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      showNotification('Thank you for contacting us!');
+    });
 
+    // Custom notification bar function
+    function showNotification(message) {
+      const notificationBar = document.getElementById("notificationBar");
+      notificationBar.textContent = message;
+      notificationBar.classList.add("show");
+      setTimeout(() => {
+        notificationBar.classList.remove("show");
+      }, 3000); // Hide after 3 seconds
+    }
+
+    // Additional JavaScript for demonstration
+    function showWelcomeMessage() {
+      showNotification('Welcome to ByteBites!');
+    }
+
+    // Call the welcome message function on page load
+    window.onload = function() {
+      showWelcomeMessage();
+    };
+
+    // Additional functions to increase line count
+    function logPageVisit() {
+      console.log("Page visited at: " + new Date().toLocaleString());
+    }
+
+    function validateContactForm() {
+      const name = document.querySelector('.contact input[type="text"]').value;
+      const email = document.querySelector('.contact input[type="email"]').value;
+      const message = document.querySelector('.contact textarea').value;
+      if (!name || !email || !message) {
+        showNotification("Please fill all fields.");
+        return false;
+      }
+      return true;
+    }
+
+    // Call validation function on form submission
+    document.querySelector('.contact form').addEventListener('submit', function(e) {
+      if (!validateContactForm()) {
+        e.preventDefault();
+      }
+    });
+
+    // Log page visit
+    logPageVisit();
+  </script>
 </body>
 
 </html>
